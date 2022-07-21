@@ -23,6 +23,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="nosotros.php">Nosotros</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="admin/index.php">Login Administrador</a>
+            </li>
         </ul>
     </nav>
     <br>

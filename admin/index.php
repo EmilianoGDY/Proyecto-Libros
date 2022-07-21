@@ -1,6 +1,14 @@
 <?php
+session_start();
 if($_POST){
-  header('Location:inicio.php');
+  if(($_POST['usuario']=="admin")&&($_POST['contrasenia']=="admin1")){
+    $_SESSION['usuario']="ok";
+    $_SESSION['nombreUsuario']="Administrador 1";
+    header('Location:inicio.php');
+  }else{
+    $mensaje="Error: El usuario o contrasena son incorrectos";
+  }
+  
 }
 ?>
 
@@ -31,6 +39,12 @@ if($_POST){
                         Login
                     </div>
                     <div class="card-body">
+
+                      <?php if(isset($mensaje)) { ?>
+                      <div class="alert alert-danger" role="alert">
+                        <?php echo $mensaje; ?>
+                      </div>
+                      <?php } ?>
 
                        <form method="POST">
                        <div class = "form-group">
